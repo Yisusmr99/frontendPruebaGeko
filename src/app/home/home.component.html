@@ -1,0 +1,117 @@
+<div class="container">
+    <br>
+        <p style="margin: 0%;">Resuleve el siguiente tablero de sudoku de manera que las fila y las columnas sumen 45,</p>
+        <p style="margin: 0%;">los numero no se pueden repetir ni en las filas ni en la columnas, sea correcta la solucion se guardara como historico.</p>
+    <br>
+    <div class="form-group row">
+        
+        <div class="col-1" style="padding: 0%;">
+          <input class="form-control" id="a0" type="number" min="1" max="9" value="{{boards[0].value}}" disabled>
+          <input class="form-control" id="a1" type="number" min="1" max="9" value="{{boards[1].value}}" disabled    >
+          <input class="form-control" id="a2" type="number" min="1" max="9" [(ngModel)]="colum0.a2">
+          <input class="form-control" id="a3" type="number" min="1" max="9" value="{{boards[3].value}}" disabled>
+          <input class="form-control" id="a4" type="number" min="1" max="9" value="{{boards[4].value}}" disabled>
+          <input class="form-control" id="a5" type="number" min="1" max="9" value="{{boards[5].value}}" disabled>
+          <input class="form-control" id="a6" type="number" min="1" max="9" [(ngModel)]="colum0.a6">
+          <input class="form-control" id="a7" type="number" min="1" max="9" [(ngModel)]="colum0.a7">
+          <input class="form-control" id="a8" type="number" min="1" max="9" [(ngModel)]="colum0.a8">
+        </div>
+        <div class="col-1" style="padding: 0%;">
+          <input class="form-control" id="b0" type="number" min="1" max="9" value="{{boards[9].value}}" disabled>
+          <input class="form-control" id="b1" type="number" min="1" max="9" [(ngModel)]="colum1.b1">
+          <input class="form-control" id="b2" type="number" min="1" max="9" value="{{boards[2].value}}" disabled>
+          <input class="form-control" id="b3" type="number" min="1" max="9" [(ngModel)]="colum1.b3">
+          <input class="form-control" id="b4" type="number" min="1" max="9" [(ngModel)]="colum1.b4">
+          <input class="form-control" id="b5" type="number" min="1" max="9" [(ngModel)]="colum1.b5">
+          <input class="form-control" id="b6" type="number" min="1" max="9" value="{{boards[6].value}}" disabled>
+          <input class="form-control" id="b7" type="number" min="1" max="9" [(ngModel)]="colum1.b7">
+          <input class="form-control" id="b8" type="number" min="1" max="9" [(ngModel)]="colum1.b8">
+        </div>
+        <div class="col-1" style="padding: 0%;">
+          <input class="form-control" id="c0" type="number" min="1" max="9" [(ngModel)]="colum2.c0">
+          <input class="form-control" id="c1" type="number" min="1" max="9" [(ngModel)]="colum2.c1">
+          <input class="form-control" id="c2" type="number" min="1" max="9" value="{{boards[11].value}}" disabled>
+          <input class="form-control" id="c3" type="number" min="1" max="9" [(ngModel)]="colum2.c3">
+          <input class="form-control" id="c4" type="number" min="1" max="9" [(ngModel)]="colum2.c4"> 
+          <input class="form-control" id="c5" type="number" min="1" max="9" [(ngModel)]="colum2.c5">
+          <input class="form-control" id="c6" type="number" min="1" max="9" [(ngModel)]="colum2.c6">
+          <input class="form-control" id="c7" type="number" min="1" max="9" [(ngModel)]="colum2.c7">
+          <input class="form-control" id="c8" type="number" min="1" max="9" [(ngModel)]="colum2.c8">
+        </div>
+        <div class="col-1" style="padding: 0%;">
+            <input class="form-control" id="d0" type="number" min="1" max="9" [(ngModel)]="colum3.d0">
+            <input class="form-control" id="d1" type="number" min="1" max="9" value="{{boards[10].value}}" disabled>
+            <input class="form-control" id="d2" type="number" min="1" max="9" [(ngModel)]="colum3.d2">
+            <input class="form-control" id="d3" type="number" min="1" max="9" [(ngModel)]="colum3.d3">
+            <input class="form-control" id="d4" type="number" min="1" max="9" value="{{boards[13].value}}" disabled>
+            <input class="form-control" id="d5" type="number" min="1" max="9" [(ngModel)]="colum3.d5">
+            <input class="form-control" id="d6" type="number" min="1" max="9" [(ngModel)]="colum3.d6">
+            <input class="form-control" id="d7" type="number" min="1" max="9" value="{{boards[7].value}}" disabled>
+            <input class="form-control" id="d8" type="number" min="1" max="9" [(ngModel)]="colum3.d8">
+        </div>
+        <div class="col-1" style="padding: 0%;">
+            <input class="form-control" id="e0" type="number" min="1" max="9" value="{{boards[18].value}}" disabled>
+            <input class="form-control" id="e1" type="number" min="1" max="9" value="{{boards[19].value}}" disabled>
+            <input class="form-control" id="e2" type="number" min="1" max="9" [(ngModel)]="colum4.e2">
+            <input class="form-control" id="e3" type="number" min="1" max="9" value="{{boards[12].value}}" disabled>
+            <input class="form-control" id="e4" type="number" min="1" max="9" [(ngModel)]="colum4.e4">
+            <input class="form-control" id="e5" type="number" min="1" max="9" value="{{boards[14].value}}" disabled>
+            <input class="form-control" id="e6" type="number" min="1" max="9" [(ngModel)]="colum4.e6">
+            <input class="form-control" id="e7" type="number" min="1" max="9" value="{{boards[16].value}}" disabled>
+            <input class="form-control" id="e8" type="number" min="1" max="9" value="{{boards[8].value}}" disabled>
+        </div>
+        <div class="col-1" style="padding: 0%;">
+            <input class="form-control" id="f0" type="number" min="1" max="9" [(ngModel)]="colum5.f0">
+            <input class="form-control" id="f1" type="number" min="1" max="9" value="{{boards[27].value}}" disabled>
+            <input class="form-control" id="f2" type="number" min="1" max="9" [(ngModel)]="colum5.f2">
+            <input class="form-control" id="f3" type="number" min="1" max="9" [(ngModel)]="colum5.f3">
+            <input class="form-control" id="f4" type="number" min="1" max="9" value="{{boards[22].value}}" disabled>
+            <input class="form-control" id="f5" type="number" min="1" max="9" [(ngModel)]="colum5.f5">
+            <input class="form-control" id="f6" type="number" min="1" max="9" [(ngModel)]="colum5.f6">
+            <input class="form-control" id="f7" type="number" min="1" max="9" value="{{boards[25].value}}" disabled>
+            <input class="form-control" id="f8" type="number" min="1" max="9" [(ngModel)]="colum5.f8">
+        </div>
+        <div class="col-1" style="padding: 0%;">
+            <input class="form-control" id="g0" type="number" min="1" max="9" [(ngModel)]="colum6.g0">
+            <input class="form-control" id="g1" type="number" min="1" max="9" [(ngModel)]="colum6.g1">
+            <input class="form-control" id="g2" type="number" min="1" max="9" [(ngModel)]="colum6.g2">
+            <input class="form-control" id="g3" type="number" min="1" max="9" [(ngModel)]="colum6.g3">
+            <input class="form-control" id="g4" type="number" min="1" max="9" [(ngModel)]="colum6.g4">
+            <input class="form-control" id="g5" type="number" min="1" max="9" [(ngModel)]="colum6.g5">
+            <input class="form-control" id="g6" type="number" min="1" max="9" value="{{boards[15].value}}" disabled>
+            <input class="form-control" id="g7" type="number" min="1" max="9" [(ngModel)]="colum6.g7">
+            <input class="form-control" id="g8" type="number" min="1" max="9" [(ngModel)]="colum6.g8">
+        </div>
+        <div class="col-1" style="padding: 0%;">
+            <input class="form-control" id="h0" type="number" min="1" max="9" [(ngModel)]="colum7.h0">
+            <input class="form-control" id="h1" type="number" min="1" max="9" [(ngModel)]="colum7.h1">
+            <input class="form-control" id="h2" type="number" min="1" max="9" value="{{boards[20].value}}" disabled>
+            <input class="form-control" id="h3" type="number" min="1" max="9" [(ngModel)]="colum7.h3">
+            <input class="form-control" id="h4" type="number" min="1" max="9" [(ngModel)]="colum7.h4">
+            <input class="form-control" id="h5" type="number" min="1" max="9" [(ngModel)]="colum7.h5">
+            <input class="form-control" id="h6" type="number" min="1" max="9" value="{{boards[24].value}}" disabled>
+            <input class="form-control" id="h7" type="number" min="1" max="9" [(ngModel)]="colum7.h7">
+            <input class="form-control" id="h8" type="number" min="1" max="9" value="{{boards[17].value}}" disabled>
+        </div>
+        <div class="col-1" style="padding: 0%;">
+            <input class="form-control" id="i0" type="number" min="1" max="9" [(ngModel)]="colum8.i0">
+            <input class="form-control" id="i1" type="number" min="1" max="9" [(ngModel)]="colum8.i1">
+            <input class="form-control" id="i2" type="number" min="1" max="9" [(ngModel)]="colum8.i2">
+            <input class="form-control" id="i3" type="number" min="1" max="9" value="{{boards[21].value}}" disabled> 
+            <input class="form-control" id="i4" type="number" min="1" max="9" value="{{boards[28].value}}" disabled>
+            <input class="form-control" id="i5" type="number" min="1" max="9" value="{{boards[23].value}}" disabled>
+            <input class="form-control" id="i6" type="number" min="1" max="9" [(ngModel)]="colum8.i6">
+            <input class="form-control" id="i7" type="number" min="1" max="9" value="{{boards[29].value}}" disabled>
+            <input class="form-control" id="i8" type="number" min="1" max="9" value="{{boards[26].value}}" disabled>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3" style="padding: 0%;">
+            <input class="form-control" placeholder="Ingresa tu nombre" type="text" [(ngModel)]="name.name">
+        </div>
+        <div class="col-md-3" >
+            <button (click)="saveBoard()" class="btn btn-primary ">Validar</button>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,28 @@
+<div class="container">
+    <br>
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre del jugador</th>
+            <th scope="col">Resultado</th>
+            <th scope="col">Fecha y hora del juego</th>
+            <!-- <th scope="col">Ver tablero</th> -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let record of records">
+            <th scope="row">{{record.id}}</th>
+            <td>{{record.name}}</td>
+            <td *ngIf="record.isSatisfactory">Satisfactorio</td>
+            <td *ngIf="!record.isSatisfactory">Insatisfactorio</td>
+            <td>{{record.updated_at}}</td>
+            <!-- <td>
+                <button type="button" class="btn btn-outline-info">
+                    <fa-icon [icon]="faEye"></fa-icon>
+                </button>
+            </td> -->
+          </tr>
+        </tbody>
+      </table>
+</div>
